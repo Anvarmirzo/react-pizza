@@ -8,14 +8,21 @@
 
     svg {
       margin-right: 8px;
+      transition: all 0.3s;
+      
+      &.rotated{
+        transform: rotate(180deg);
+      }
     }
 
     b {
       margin-right: 8px;
     }
 
-    span {
+    button {
       color: $orange;
+      border: none;
+      background-color: transparent;
       border-bottom: 1px dashed $orange;
       cursor: pointer;
     }
