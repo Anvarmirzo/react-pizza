@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 import logoSvg from '../assets/img/pizza-logo.svg';
 import { Button } from './index';
@@ -7,7 +7,7 @@ export const Header = () => {
 	return (
 		<header className='header'>
 			<div className='container'>
-				<Link to="/">
+				<Link to='/'>
 					<div className='header__logo'>
 						<img width='38' src={logoSvg} alt='Pizza logo' />
 						<div>
@@ -17,8 +17,9 @@ export const Header = () => {
 					</div>
 				</Link>
 				<div className='header__cart'>
-					<Link to="/cart">
-						<Button className="button--cart"><span>520 ₽</span>
+					<Link to='/cart'>
+						<Button className='button--cart'>
+							<span>520 ₽</span>
 							<div className='button__delimiter'></div>
 							<svg
 								width='18'
@@ -49,12 +50,11 @@ export const Header = () => {
 									strokeLinejoin='round'
 								/>
 							</svg>
-							<span>3</span></Button>
+							<span>3</span>
+						</Button>
 					</Link>
 				</div>
 			</div>
 		</header>
-	)
-}
-
-
+	);
+};

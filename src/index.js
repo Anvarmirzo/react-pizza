@@ -4,14 +4,11 @@ import ReactDOM from 'react-dom';
 import './scss/app.scss';
 
 import App from './App';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { Header } from './components/Header';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-	<React.StrictMode>
 		<BrowserRouter>
 			<App />
-		</BrowserRouter>
-	</React.StrictMode>,
+		</BrowserRouter>,
 	document.getElementById('root'),
 );
