@@ -1,0 +1,15 @@
+1) useDispatch
+dispatch отдельно вызывается:
+	const dispatch = useDispatch();
+Позже его использовали, чтобы передать данные в виде аргументов в функции из экшнов нашего редакса:
+	import { setPizzas } from './redux/actions/pizzas';
+	axios.get('/db.json').then(({ data }) => dispatch(setPizzas(data.pizzas)));
+или
+	import { setCategory } from '../redux/actions/filters';
+	const dispatch = useDispatch();
+<Categories
+					items={['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']}
+					onClickItem={(index) => dispatch(setCategory(index))}
+/>
+
+2) Есть ли разница useMemo и React.memo
