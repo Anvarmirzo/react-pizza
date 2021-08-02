@@ -10,12 +10,12 @@ export const PizzaItem = ({
 	rating,
 	sizes,
 	types,
-	...props
 }) => {
 	const [activeType, setactiveType] = useState(types[0]);
 	const [activeSize, setActiveSize] = useState(0);
 
 	const localTypes = ['тонкое', 'традиционное'];
+
 	return (
 		<div className='pizza-block'>
 			<img className='pizza-block__image' src={imageUrl} alt={name} />
@@ -80,4 +80,11 @@ PizzaItem.propTypes = {
 	rating: PropTypes.number.isRequired,
 	sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
 	types: PropTypes.arrayOf(PropTypes.number).isRequired,
+};
+
+PizzaItem.defaultProps = {
+	name: '---',
+	price: 0,
+	types: [],
+	sizes: [],
 };
