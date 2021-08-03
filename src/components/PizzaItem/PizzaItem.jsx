@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import { Button } from '../Button';
 
 export const PizzaItem = ({
+	id,
 	category,
 	imageUrl,
 	name,
@@ -10,26 +12,48 @@ export const PizzaItem = ({
 	rating,
 	sizes,
 	types,
+	onAddPizza,
+	addedCount,
 }) => {
-	const [activeType, setactiveType] = useState(types[0]);
+	const [activeType, setActiveType] = useState(types[0]);
 	const [activeSize, setActiveSize] = useState(0);
 
-	const localTypes = ['тонкое', 'традиционное'];
+	const availableTypes = ['тонкое', 'традиционное'];
+	const availableSizes = [26, 30, 40];
 
+	const onSelectType = (index) => {
+		setActiveType(index);
+	};
+
+	const onSelectSize = (index) => {
+		setActiveSize(index);
+	};
+
+	const handleAddPizza = () => {
+		const obj = {
+			id,
+			name,
+			imageUrl,
+			price,
+			size: availableSizes[activeSize],
+			type: availableTypes[activeType],
+		};
+		onAddPizza(obj);
+	};
 	return (
 		<div className='pizza-block'>
 			<img className='pizza-block__image' src={imageUrl} alt={name} />
 			<h4 className='pizza-block__title'>{name}</h4>
 			<div className='pizza-block__selector'>
 				<ul>
-					{localTypes.map((localType, index) => (
+					{availableTypes.map((localType, index) => (
 						<li
 							className={cn({
 								active: activeType === index,
 								disabled: !types.includes(index),
 							})}
 							onClick={() => {
-								setactiveType(index);
+								onSelectType(index);
 							}}
 							key={index}
 						>
@@ -38,11 +62,14 @@ export const PizzaItem = ({
 					))}
 				</ul>
 				<ul>
-					{sizes.map((size, index) => (
+					{availableSizes.map((size, index) => (
 						<li
-							className={cn({ active: activeSize === index })}
-							onClick={() => setActiveSize(index)}
 							key={size}
+							onClick={() => onSelectSize(index)}
+							className={cn({
+								active: sizes.includes(size) && activeSize === index,
+								disabled: !sizes.includes(size),
+							})}
 						>
 							{size} см.
 						</li>
@@ -51,7 +78,11 @@ export const PizzaItem = ({
 			</div>
 			<div className='pizza-block__bottom'>
 				<div className='pizza-block__price'>от {price} ₽</div>
-				<div className='button button--outline button--add'>
+				<Button
+					type='btton'
+					className='button--outline button--add'
+					onClick={handleAddPizza}
+				>
 					<svg
 						width='12'
 						height='12'
@@ -65,21 +96,21 @@ export const PizzaItem = ({
 						/>
 					</svg>
 					<span>Добавить</span>
-					<i>2</i>
-				</div>
+					{addedCount && <i>{addedCount}</i>}
+				</Button>
 			</div>
 		</div>
 	);
 };
 
 PizzaItem.propTypes = {
-	name: PropTypes.string.isRequired,
-	category: PropTypes.number.isRequired,
-	imageUrl: PropTypes.string.isRequired,
-	price: PropTypes.number.isRequired,
-	rating: PropTypes.number.isRequired,
-	sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
-	types: PropTypes.arrayOf(PropTypes.number).isRequired,
+	name: PropTypes.string,
+	imageUrl: PropTypes.string,
+	price: PropTypes.number,
+	types: PropTypes.arrayOf(PropTypes.number),
+	sizes: PropTypes.arrayOf(PropTypes.number),
+	onClickAddPizza: PropTypes.func,
+	addedCount: PropTypes.number,
 };
 
 PizzaItem.defaultProps = {
