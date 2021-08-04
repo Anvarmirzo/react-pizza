@@ -28,7 +28,7 @@ body {
   &__items {
     display: flex;
     flex-wrap: wrap;
-    column-gap:10px;
+    column-gap: 10px;
   }
 
   &__top {
@@ -84,9 +84,12 @@ body {
     cursor: pointer;
     @include noselect();
 
-    span {
+    button {
       display: inline-block;
       margin-left: 7px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
       color: #b6b6b6;
       font-size: 18px;
     }
@@ -317,7 +320,7 @@ body {
   }
 }
 
-.mx-auto{
+.mx-auto {
   margin-right: auto;
   margin-left: auto;
 }
