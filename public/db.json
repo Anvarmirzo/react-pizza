@@ -23,7 +23,7 @@
 		{
 			"id": 2,
 			"imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
-			"name": "Цыпленок барбекю",
+			"name": "Постная",
 			"types": [0],
 			"sizes": [26, 40],
 			"price": 295,
@@ -99,6 +99,66 @@
 			"price": 285,
 			"category": 5,
 			"rating": 7
+		},
+		{
+			"id": 10,
+			"imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
+			"name": "Мясной пир",
+			"types": [0, 1],
+			"sizes": [26, 30, 40],
+			"price": 522,
+			"category": 0,
+			"rating": 4
+		},
+		{
+			"id": 11,
+			"imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
+			"name": "Мясное ассотри",
+			"types": [0, 1],
+			"sizes": [26, 30, 40],
+			"price": 443,
+			"category": 0,
+			"rating": 4
+		},
+		{
+			"id": 12,
+			"imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
+			"name": "Мексиканская пицца",
+			"types": [0, 1],
+			"sizes": [26, 30, 40],
+			"price": 990,
+			"category": 0,
+			"rating": 4
+		},
+		{
+			"id": 13,
+			"imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+			"name": "Овощная",
+			"types": [0],
+			"sizes": [26, 40],
+			"price": 655,
+			"category": 1,
+			"rating": 6
+		},
+		{
+			"id": 14,
+			"imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+			"name": "Цыпленок барбекю",
+			"types": [0],
+			"sizes": [26, 40],
+			"price": 745,
+			"category": 2,
+			"rating": 6
+		},
+		{
+			"id": 15,
+			"imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+			"name": "Классическая итальянская",
+			"types": [0],
+			"sizes": [26, 40],
+			"price": 345,
+			"category": 2,
+			"rating": 6
 		}
 	]
 }
