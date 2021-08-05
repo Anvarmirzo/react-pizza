@@ -1,4 +1,4 @@
-@import 'variables';
+@import '../_variables';
 
 .button {
   display: inline-block;
@@ -37,6 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     width: 32px;
     height: 32px;
     min-width: 32px;
@@ -56,6 +57,7 @@
   &--outline {
     background-color: #fff;
     border-color: $orange;
+
     &,
     span {
       color: $orange;
@@ -96,6 +98,10 @@
   }
 
   &--add {
+    @media screen and (max-width:360px) {
+      padding: 8px 13px;
+    }
+
     svg {
       margin-right: 2px;
     }
@@ -132,6 +138,7 @@
   &--cart {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     line-height: 23px;
     padding: 12px 25px;
 
